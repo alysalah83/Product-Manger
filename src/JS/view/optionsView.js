@@ -1,13 +1,26 @@
 class Options {
+  #sort = document.querySelector('.input__select');
   #btnReverse = document.querySelector('.btn__reverse');
-  #bar = document.querySelector('.options__bar');
+  #btnRemove = document.querySelector('.btn__remove');
+  #arrow;
 
-  addHandlerOpenOptions(handler) {
+  addHandlerSortChange(handler) {
+    this.#sort.addEventListener('change', e => {
+      const option = e.target.value;
+      handler(option, this.#arrow === 'true');
+    });
+  }
+
+  addHandlerArrowClick(handler) {
     this.#btnReverse.addEventListener('click', _ => {
       this.#toggleIcon(this.#btnReverse);
-      const { arrow } = this.#btnReverse.dataset;
-      handler(arrow === 'true');
+      this.#arrow = this.#btnReverse.dataset.arrow;
+      handler(this.#arrow === 'true');
     });
+  }
+
+  addHandlerClearAll(handler) {
+    this.#btnRemove.addEventListener('click', handler);
   }
 
   #toggleIcon(btn) {

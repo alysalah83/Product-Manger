@@ -3,6 +3,7 @@ import { getStatus } from '../helper';
 class ProductView {
   #data;
   #parentEle = document.querySelector('.section__table');
+  #tableHead = document.querySelector('.table__head');
   #name = document.getElementById('product__name');
   #price = document.getElementById('product__price');
   #status = document.getElementById('product__available');
@@ -26,12 +27,13 @@ class ProductView {
 
   render(data, clear) {
     this.#data = data;
-    clear ? this.#clear() : '';
+    clear ? this.clear() : '';
+    if (!data) return;
     const markup = this.#generateMarkup();
-    this.#parentEle.insertAdjacentHTML('beforeend', markup);
+    this.#tableHead.insertAdjacentHTML('afterend', markup);
   }
 
-  #clear() {
+  clear() {
     Array.from(this.#parentEle.children).forEach((child, i) =>
       i !== 0 ? this.#parentEle.removeChild(child) : ''
     );
