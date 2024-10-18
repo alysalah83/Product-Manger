@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/general.css" />
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/media.css" />
+    <script type="module" defer src="JS/controll.js"></script>
+    <title>Image Genrator</title>
+  </head>
+  <body>
+    <header class="header"><h1 class="heading-1">Products Manger</h1></header>
+    <main class="main">
+      <section class="section section__add">
+        <h2 class="heading-2">Products Add</h2>
+        <form class="product__form">
+          <div class="input__container">
+            <label for="product__name" class="label">Product Name</label>
+            <input
+              type="text"
+              placeholder="Product Name"
+              id="product__name"
+              class="input"
+              required
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon__lock"
+              data-lock="false"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 10.5V6.75a4.5 4.5 0 1 1 9 0v3.75M3.75 21.75h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H3.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+              />
+            </svg>
+          </div>
+          <div class="input__container">
+            <label for="product__price" class="label">Product Price</label>
+            <input
+              type="number"
+              placeholder="Product Price"
+              id="product__price"
+              class="input"
+              min="0"
+              required
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon__lock"
+              data-lock="false"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 10.5V6.75a4.5 4.5 0 1 1 9 0v3.75M3.75 21.75h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H3.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+              />
+            </svg>
+          </div>
+          <div class="input__container">
+            <label for="product__available" class="label">Status</label>
+            <select id="product__available" class="input">
+              <option value="available">In Stock</option>
+              <option value="not-available">out of Stock</option>
+            </select>
+          </div>
+          <div class="input__container">
+            <label for="product__model" class="label">Model</label>
+            <input
+              type="text"
+              placeholder="Model"
+              id="product__model"
+              class="input"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon__lock"
+              data-lock="false"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 10.5V6.75a4.5 4.5 0 1 1 9 0v3.75M3.75 21.75h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H3.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+              />
+            </svg>
+          </div>
+          <div class="input__container">
+            <label for="product__quantity" class="label">Quantity</label>
+            <input
+              type="number"
+              placeholder="Quantity"
+              id="product__quantity"
+              class="input"
+              min="0"
+              required
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon__lock"
+              data-lock="false"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 10.5V6.75a4.5 4.5 0 1 1 9 0v3.75M3.75 21.75h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H3.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+              />
+            </svg>
+          </div>
+          <div class="input__container">
+            <label for="product__manufacturer" class="label"
+              >Manufacturer</label
+            >
+            <input
+              type="text"
+              placeholder="Manufacturer"
+              id="product__manufacturer"
+              class="input"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon__lock"
+              data-lock="false"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 10.5V6.75a4.5 4.5 0 1 1 9 0v3.75M3.75 21.75h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H3.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+              />
+            </svg>
+          </div>
+          <div class="input__btn">
+            <input
+              id="product__image"
+              type="file"
+              accept="image/*"
+              class="hidden"
+            />
+            <button
+              type="button"
+              onclick="document.getElementById('product__image').click();"
+              class="btn upload__btn"
+            >
+              Upload Image
+            </button>
+            <button class="btn add__btn" type="submit">+Add</button>
+          </div>
+        </form>
+      </section>
+      <section class="section section__table">
+        <div class="table__row table__head">
+          <p class="table__ele">ID</p>
+          <p class="table__ele">Image</p>
+          <p class="table__ele">Product Name</p>
+          <p class="table__ele">Model</p>
+          <p class="table__ele">Manufacturer</p>
+          <p class="table__ele">Price</p>
+          <p class="table__ele">Quantity</p>
+          <p class="table__ele">status</p>
+          <p class="table__ele">Edit</p>
+        </div>
+        <!-- <div class="table__row">
+          <p class="table__ele"></p>
+          <p class="table__ele hight__set">
+            <img src="../../../../card.webp" alt="" class="table__img" />
+          </p>
+          <p class="table__ele"></p>
+          <p class="table__ele"></p>
+          <p class="table__ele"></p>
+          <p class="table__ele"></p>
+          <p class="table__ele"></p>
+          <p class="table__ele"></p>
+          <div class="table__ele">
+            <button class="btn btn__edit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="icon__edit"
+              >
+                <path
+                  d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div> -->
+      </section>
+    </main>
+  </body>
+</html>
