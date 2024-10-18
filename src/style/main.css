@@ -104,6 +104,77 @@
   background-color: #7a7c7f;
 }
 
+/************** options sections**********/
+
+.section__options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+
+.options__container {
+  width: fit-content;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+.btn__reverse {
+  background-color: #e7eff9;
+  padding: 1.2rem;
+  border-radius: 999px;
+}
+
+.btn__reverse:hover {
+  background-color: #cfe0f2;
+}
+
+.icon__reverse {
+  width: 2.8rem;
+  height: 2.8rem;
+  color: #0e63be;
+  stroke-width: 10;
+}
+
+.label__select {
+  font-size: 1.8rem !important;
+  font-size: 600;
+  color: #373b3e;
+  margin-right: 1.4rem;
+}
+
+.input__select {
+  width: 12rem;
+  font-size: 2rem;
+  padding: 0.4rem;
+  color: #323538;
+  border: 2px solid #868e96;
+  border-radius: 9px;
+  background-color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn__remove {
+  background-color: #e03131;
+  padding: 1.2rem;
+  border-radius: 999px;
+}
+
+.btn__remove:hover {
+  background-color: #c92a2a;
+}
+
+.icon__remove {
+  color: #fff5f5;
+  width: 2rem;
+  height: 2rem;
+}
+
 /**********^** table section **************/
 
 .table__row {

@@ -32,6 +32,9 @@ body {
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   outline: none;
   color: #f1f3f5;

@@ -24,10 +24,17 @@ class ProductView {
     this.#addHandlerLockTyping();
   }
 
-  render(data) {
+  render(data, clear) {
     this.#data = data;
+    clear ? this.#clear() : '';
     const markup = this.#generateMarkup();
     this.#parentEle.insertAdjacentHTML('beforeend', markup);
+  }
+
+  #clear() {
+    Array.from(this.#parentEle.children).forEach((child, i) =>
+      i !== 0 ? this.#parentEle.removeChild(child) : ''
+    );
   }
 
   #toggleLockActive(icon) {
