@@ -1,5 +1,6 @@
 import productView from './view/productView';
 import optionsView from './view/optionsView';
+import editView from './view/editView';
 import * as model from './model';
 
 const controllLoadProduct = function (productValues) {
@@ -44,11 +45,17 @@ const controllRemoveAllProducts = function () {
   productView.render(false, true);
 };
 
+const controllEditedValues = function (valuesArr) {
+  //editing state products and the local storage
+  model.editProductsArr(valuesArr);
+};
+
 const init = function () {
   productView.addHandlerSubmit(controllLoadProduct);
   controllLoadStorage();
   optionsView.addHandlerArrowClick(controllReverseTable);
   optionsView.addHandlerSortChange(controllSortChange);
   optionsView.addHandlerClearAll(controllRemoveAllProducts);
+  editView.addHandlerEditValues(controllEditedValues);
 };
 init();

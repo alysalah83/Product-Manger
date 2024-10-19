@@ -46,3 +46,16 @@ export const clearAll = function () {
   state.id = 0;
   localStorage.clear();
 };
+
+export const editProductsArr = function (valuesArr) {
+  console.log(valuesArr);
+  const editedProductIndex = state.products.findIndex(
+    obj => obj.id === valuesArr[0]
+  );
+  state.products.at(editedProductIndex).name = valuesArr[1];
+  state.products.at(editedProductIndex).model = valuesArr[2];
+  state.products.at(editedProductIndex).manufacturer = valuesArr[3];
+  state.products.at(editedProductIndex).price = valuesArr[4];
+  state.products.at(editedProductIndex).quantity = valuesArr[5];
+  storgeProducts(state.products);
+};

@@ -208,7 +208,7 @@
 }
 
 .hight__set {
-  height: 7rem;
+  min-height: 7rem;
 }
 
 .table__img {
@@ -252,4 +252,33 @@
 
 .input__locked {
   background-color: #d0ebff;
+}
+
+.input__edit {
+  background-color: #f1f3f5;
+  border: 2px solid #868e96;
+  box-shadow: 0 0 0 #fff;
+  color: #373b3e;
+}
+
+.btn_container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0;
+  gap: 1.2rem;
+}
+
+.btn-mark {
+  padding: 0.6rem 1.2rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  width: 60%;
+}
+
+.btn.btn__correct {
+  background-color: #37b24d;
+}
+
+.btn.btn__wrong {
+  background-color: #e03131;
 }

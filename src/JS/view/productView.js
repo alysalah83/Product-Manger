@@ -133,22 +133,23 @@ class ProductView {
   #markup(obj) {
     return `
         <div class="table__row">
-            <p class="table__ele">#${obj.id}</p>
+            <p class="table__ele id">#${obj.id}</p>
             <p class="table__ele hight__set">
             <img src="${
               obj.image || new URL('../../../default img.png', import.meta.url)
             }" alt="${obj.name} Image" class="table__img" />
             </p>
-            <p class="table__ele">${obj.name}</p>
-            <p class="table__ele">${obj.model || 'N/A'}</p>
-            <p class="table__ele">${obj.manufacturer || 'N/A'}</p>
-            <p class="table__ele">${obj.price}</p>
-            <p class="table__ele">${obj.quantity}</p>
-            <p class="table__ele ${getStatus(obj.status, true)}">${getStatus(
-      obj.status
-    )}</p>
-            <div class="table__ele">
-            <button class="btn btn__edit" data-id=${obj.id}>
+            <p class="table__ele name">${obj.name}</p>
+            <p class="table__ele model">${obj.model || 'N/A'}</p>
+            <p class="table__ele manufacturer">${obj.manufacturer || 'N/A'}</p>
+            <p class="table__ele price">${obj.price}</p>
+            <p class="table__ele quantity">${obj.quantity}</p>
+            <p class="table__ele status ${getStatus(
+              obj.status,
+              true
+            )}">${getStatus(obj.status)}</p>
+            <div class="table__ele btn_container">
+            <button class="btn btn__edit">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
