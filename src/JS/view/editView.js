@@ -10,9 +10,12 @@ class Edit {
   #tableElements = [];
   #oldValues = [];
   #section = document.querySelector('.section__table');
+  #removeEle;
+  #removeIconEle;
 
   constructor() {
     this.#addHandlerBtnEdit();
+    this.#addHandlerRemoveEle();
   }
 
   #addHandlerBtnEdit() {
@@ -22,6 +25,7 @@ class Edit {
       this.#parentEle = btn.closest('.table__row');
 
       this.#setEleFields(this.#parentEle);
+      this.#toggleRemoveBtn();
       this.#clearOldValues();
 
       this.#tableElements.forEach(ele => {
@@ -42,11 +46,24 @@ class Edit {
 
       const edit = btn.classList.contains('btn__correct');
       const id = this.#gettingID(btn);
+      const remove = this.#removeIconEle.classList.contains(
+        'icon__remove-ele__active'
+      );
 
       edit ? this.#editInputsValues(true) : this.#editInputsValues(false);
 
-      if (edit)
-        handler([id, ...this.#tableElements.map(ele => ele.textContent)]);
+      this.#toggleRemoveBtn();
+
+      if (remove && edit) return handler(id, null);
+      if (edit) handler(id, this.#newValuesArr());
+    });
+  }
+
+  #addHandlerRemoveEle() {
+    this.#section.addEventListener('click', e => {
+      const btn = e.target.closest('.remove-ele__container');
+      if (!btn) return;
+      this.#removeIconEle.classList.toggle('icon__remove-ele__active');
     });
   }
 
@@ -68,6 +85,8 @@ class Edit {
     this.#price = parent.querySelector('.price');
     this.#quantity = parent.querySelector('.quantity');
     this.#btnContainer = parent.querySelector('.btn_container');
+    this.#removeEle = parent.querySelector('.remove-ele__container');
+    this.#removeIconEle = parent.querySelector('.icon__remove-ele');
     this.#tableElements = [
       this.#nameEle,
       this.#modleEle,
@@ -75,6 +94,10 @@ class Edit {
       this.#price,
       this.#quantity,
     ];
+  }
+
+  #toggleRemoveBtn() {
+    this.#removeEle.classList.toggle('hidden');
   }
 
   #gettingID(btn) {
@@ -85,6 +108,10 @@ class Edit {
 
   #clearOldValues() {
     this.#oldValues.splice(0);
+  }
+
+  #newValuesArr() {
+    return this.#tableElements.map(ele => ele.textContent);
   }
 
   #inputMarkup() {

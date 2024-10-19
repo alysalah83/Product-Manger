@@ -1,3 +1,5 @@
+import { getIndex } from './helper';
+
 export const state = {
   product: {},
   products: [],
@@ -47,15 +49,19 @@ export const clearAll = function () {
   localStorage.clear();
 };
 
-export const editProductsArr = function (valuesArr) {
-  console.log(valuesArr);
-  const editedProductIndex = state.products.findIndex(
-    obj => obj.id === valuesArr[0]
-  );
-  state.products.at(editedProductIndex).name = valuesArr[1];
-  state.products.at(editedProductIndex).model = valuesArr[2];
-  state.products.at(editedProductIndex).manufacturer = valuesArr[3];
-  state.products.at(editedProductIndex).price = valuesArr[4];
-  state.products.at(editedProductIndex).quantity = valuesArr[5];
+export const editProductsArr = function (id, valuesArr) {
+  console.log(id, valuesArr);
+  const editedProductIndex = getIndex(state.products, id);
+  state.products.at(editedProductIndex).name = valuesArr[0];
+  state.products.at(editedProductIndex).model = valuesArr[1];
+  state.products.at(editedProductIndex).manufacturer = valuesArr[2];
+  state.products.at(editedProductIndex).price = valuesArr[3];
+  state.products.at(editedProductIndex).quantity = valuesArr[4];
+  storgeProducts(state.products);
+};
+
+export const removeProduct = function (id) {
+  const removedProductIndex = getIndex(state.products, id);
+  state.products.splice(removedProductIndex, 1);
   storgeProducts(state.products);
 };

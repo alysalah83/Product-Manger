@@ -45,9 +45,18 @@ const controllRemoveAllProducts = function () {
   productView.render(false, true);
 };
 
-const controllEditedValues = function (valuesArr) {
+const controllEditedValues = function (id, valuesArr) {
+  //if no values equal remove
+  if (!valuesArr) {
+    //remove the product form state produst and local
+    model.removeProduct(id);
+
+    //render new products and return
+    return productView.render(model.state.products, true);
+  }
+
   //editing state products and the local storage
-  model.editProductsArr(valuesArr);
+  model.editProductsArr(id, valuesArr);
 };
 
 const init = function () {

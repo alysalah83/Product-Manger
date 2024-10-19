@@ -178,6 +178,7 @@
 /**********^** table section **************/
 
 .table__row {
+  position: relative;
   display: grid;
   grid-template-columns: 1.5fr 3fr 8fr 4fr 6fr 5fr 4fr 4fr 3fr;
   border-bottom: 1px solid #bcbebf;
@@ -281,4 +282,25 @@
 
 .btn.btn__wrong {
   background-color: #e03131;
+}
+
+.remove-ele__container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-150%, -50%);
+  cursor: pointer;
+}
+
+.icon__remove-ele {
+  color: #e96f6f;
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: all 0.3s;
+}
+
+.icon__remove-ele__active {
+  color: #e03131;
+  stroke-width: 2;
+  transform: scale(1.05);
 }
