@@ -18,6 +18,26 @@ class Edit {
     this.#addHandlerRemoveEle();
   }
 
+  #setEleFields(parent) {
+    this.#nameEle = parent.querySelector('.name');
+    this.#modleEle = parent.querySelector('.model');
+    this.#manufacturerEle = parent.querySelector('.manufacturer');
+    this.#price = parent.querySelector('.price');
+    this.#quantity = parent.querySelector('.quantity');
+    this.#status = parent.querySelector('.status');
+    this.#btnContainer = parent.querySelector('.btn_container');
+    this.#removeEle = parent.querySelector('.remove-ele__container');
+    this.#removeIconEle = parent.querySelector('.icon__remove-ele');
+    this.#tableElements = [
+      this.#nameEle,
+      this.#modleEle,
+      this.#manufacturerEle,
+      this.#price,
+      this.#quantity,
+      this.#status,
+    ];
+  }
+
   #addHandlerBtnEdit() {
     this.#section.addEventListener('click', e => {
       const btn = e.target.closest('.btn__edit');
@@ -86,26 +106,6 @@ class Edit {
     this.#btnContainer.innerHTML = this.#btnEditMarkup();
   }
 
-  #setEleFields(parent) {
-    this.#nameEle = parent.querySelector('.name');
-    this.#modleEle = parent.querySelector('.model');
-    this.#manufacturerEle = parent.querySelector('.manufacturer');
-    this.#price = parent.querySelector('.price');
-    this.#quantity = parent.querySelector('.quantity');
-    this.#status = parent.querySelector('.status');
-    this.#btnContainer = parent.querySelector('.btn_container');
-    this.#removeEle = parent.querySelector('.remove-ele__container');
-    this.#removeIconEle = parent.querySelector('.icon__remove-ele');
-    this.#tableElements = [
-      this.#nameEle,
-      this.#modleEle,
-      this.#manufacturerEle,
-      this.#price,
-      this.#quantity,
-      this.#status,
-    ];
-  }
-
   #toggleRemoveBtn() {
     this.#removeEle.classList.toggle('hidden');
   }
@@ -127,7 +127,7 @@ class Edit {
   #inputMarkup(number, select) {
     return select
       ? `
-       <select id="product__available" class="input input__edit font__small">
+       <select id="product__available" class="input input__edit padding-top-bot__small">
           <option value="In Stock">In Stock</option>
           <option value="out of Stock">out of Stock</option>
         </select>

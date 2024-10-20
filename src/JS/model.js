@@ -57,6 +57,7 @@ export const editProductsArr = function (id, valuesArr) {
   state.products.at(editedProductIndex).manufacturer = valuesArr[2];
   state.products.at(editedProductIndex).price = valuesArr[3];
   state.products.at(editedProductIndex).quantity = valuesArr[4];
+  state.products.at(editedProductIndex).status = valuesArr[5];
   storgeProducts(state.products);
 };
 
