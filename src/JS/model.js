@@ -68,26 +68,18 @@ export const removeProduct = function (id) {
   storgeProducts(state.products);
 };
 
-export const setResults = function (value) {
-  if (parseInt(value)) {
-    const id = value;
-    const products = state.products.filter(product =>
-      product.id.toString().toLowerCase().trim().includes(id)
-    );
-    state.searchResults = products;
-  } else {
-    const name = value.toLowerCase().trim();
-    const products = state.products.filter(product =>
-      product.name.toLowerCase().trim().includes(name)
-    );
-    state.searchResults = products;
-  }
+const getResults = function (value, type) {
+  const products = state.products.filter(product => {
+    const editedValue =
+      type === 'id' ? product[type].toString() : product[type];
+    return editedValue.toLowerCase().trim().includes(value);
+  });
+  state.searchResults = products;
 };
 
-// const getResults = function (value, num) {
-//   const products = state.products.filter(product => {
-//     const editedValue = num ? product.value.toString() : product.value;
-//     return editedValue.toLowerCase().trim().includes(value);
-//   });
-//   state.searchResults = products;
-// };
+export const setResults = function (value) {
+  const editedValue = value.toLowerCase().trim();
+  const isNumber = parseInt(value);
+
+  isNumber ? getResults(editedValue, 'id') : getResults(editedValue, 'name');
+};
