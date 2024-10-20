@@ -15,7 +15,7 @@ export const setProduct = function (productValues) {
   state.productsSorted = state.products;
   storgeProducts(state.products);
 
-  console.log(state.product);
+  console.log(state.product, state.id);
 };
 
 const storgeProducts = function (products) {
@@ -27,7 +27,7 @@ export const getProducts = function () {
   if (!data) return;
   state.products = data;
   state.productsSorted = data;
-  state.id = state.products.at(-1).id;
+  state.id = state.products.at(0).id;
   console.log(state.products);
 };
 
