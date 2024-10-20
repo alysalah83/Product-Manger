@@ -29,10 +29,14 @@ class Edit {
       this.#clearOldValues();
 
       this.#tableElements.forEach(ele => {
+        console.log(ele);
         const value = ele.textContent;
+        const isNumber = parseInt(value);
+        const enableSelect = ele.classList.contains('status');
+
         this.#oldValues.push(value);
-        ele.innerHTML = this.#inputMarkup();
-        ele.querySelector('input').value = value;
+        ele.innerHTML = this.#inputMarkup(isNumber, enableSelect);
+        ele.querySelector('.input').value = value;
       });
 
       this.#btnContainer.innerHTML = this.#btnsMarkup();
@@ -67,13 +71,17 @@ class Edit {
     });
   }
 
-  #editInputsValues(correct) {
+  #editInputsValues(edit) {
     this.#tableElements.forEach((ele, i) => {
-      const value = correct
-        ? ele.querySelector('input').value
+      const value = edit
+        ? ele.querySelector('.input').value
         : this.#oldValues[i];
       ele.innerHTML = '';
       ele.textContent = value;
+      if (ele.classList.contains('status')) {
+        ele.classList.remove('green', 'red');
+        ele.classList.add(`${value === 'In Stock' ? 'green' : 'red'}`);
+      }
     });
     this.#btnContainer.innerHTML = this.#btnEditMarkup();
   }
@@ -84,6 +92,7 @@ class Edit {
     this.#manufacturerEle = parent.querySelector('.manufacturer');
     this.#price = parent.querySelector('.price');
     this.#quantity = parent.querySelector('.quantity');
+    this.#status = parent.querySelector('.status');
     this.#btnContainer = parent.querySelector('.btn_container');
     this.#removeEle = parent.querySelector('.remove-ele__container');
     this.#removeIconEle = parent.querySelector('.icon__remove-ele');
@@ -93,6 +102,7 @@ class Edit {
       this.#manufacturerEle,
       this.#price,
       this.#quantity,
+      this.#status,
     ];
   }
 
@@ -114,12 +124,18 @@ class Edit {
     return this.#tableElements.map(ele => ele.textContent);
   }
 
-  #inputMarkup() {
-    return `
+  #inputMarkup(number, select) {
+    return select
+      ? `
+       <select id="product__available" class="input input__edit font__small">
+          <option value="In Stock">In Stock</option>
+          <option value="out of Stock">out of Stock</option>
+        </select>
+      `
+      : `
      <input
-        type="text"
+        type="${number ? 'number' : 'text'}"
         class="input input__edit"
-        required
     />
     `;
   }

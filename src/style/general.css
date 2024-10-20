@@ -59,3 +59,7 @@ body {
 .red {
   color: #e03131 !important;
 }
+
+.font__small {
+  padding: 1.2rem 0.6rem !important;
+}
