@@ -109,7 +109,43 @@
 .section__options {
   display: flex;
   justify-content: center;
+  gap: 2.4rem;
   margin-bottom: 1.6rem;
+}
+
+.search__container {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.btn__search {
+  background-color: #d0ebff;
+  border-radius: 999px;
+  padding: 1.6rem;
+}
+
+.icon__search {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #1864ab;
+}
+
+.input.input__search {
+  visibility: hidden;
+  width: 0;
+  padding: 1.4rem;
+  font-size: 1.8rem;
+  color: #495057;
+  border-radius: 8px;
+  background-color: #e7eff9;
+  box-shadow: 0 0 0 #fff;
+  transition: all 0.4s ease-in;
+}
+
+.input.input__search.input__search-active {
+  visibility: visible;
+  width: 70%;
 }
 
 .options__container {

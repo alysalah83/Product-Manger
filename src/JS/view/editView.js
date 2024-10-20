@@ -112,7 +112,7 @@ class Edit {
 
   #gettingID(btn) {
     return parseInt(
-      btn.closest('.table__row').querySelector('.id').textContent.split('')[1]
+      btn.closest('.table__row').querySelector('.id').textContent.split('#')[1]
     );
   }
 

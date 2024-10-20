@@ -1,6 +1,7 @@
 import productView from './view/productView';
 import optionsView from './view/optionsView';
 import editView from './view/editView';
+import searchView from './view/searchView';
 import * as model from './model';
 
 const controllLoadProduct = function (productValues) {
@@ -59,6 +60,14 @@ const controllEditedValues = function (id, valuesArr) {
   model.editProductsArr(id, valuesArr);
 };
 
+const controllSearchResults = function (value) {
+  // getting the product and save it in state
+  model.setResults(value);
+
+  // render the products on the view
+  productView.render(model.state.searchResults, true);
+};
+
 const init = function () {
   productView.addHandlerSubmit(controllLoadProduct);
   controllLoadStorage();
@@ -66,5 +75,6 @@ const init = function () {
   optionsView.addHandlerSortChange(controllSortChange);
   optionsView.addHandlerClearAll(controllRemoveAllProducts);
   editView.addHandlerEditValues(controllEditedValues);
+  searchView.addHandlerInputng(controllSearchResults);
 };
 init();
