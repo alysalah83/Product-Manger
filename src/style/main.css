@@ -5,6 +5,7 @@
 }
 
 .heading-1 {
+  display: inline-block;
   font-size: 3.8rem;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -20,6 +21,13 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.header__text {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 1.4rem;
+  color: #a6a8a9;
 }
 
 .main {
@@ -60,6 +68,7 @@
 }
 
 .input {
+  font-family: inherit;
   padding: 1.2rem;
   font-size: 1.6rem;
   width: 80%;
@@ -190,6 +199,7 @@
 }
 
 .input__select {
+  font-family: inherit;
   width: 12rem;
   font-size: 2rem;
   padding: 0.4rem;

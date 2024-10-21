@@ -49,7 +49,6 @@ class Edit {
       this.#clearOldValues();
 
       this.#tableElements.forEach(ele => {
-        console.log(ele);
         const value = ele.textContent;
         const isNumber = parseInt(value);
         const enableSelect = ele.classList.contains('status');

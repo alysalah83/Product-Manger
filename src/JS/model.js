@@ -11,12 +11,9 @@ export const state = {
 export const setProduct = function (productValues) {
   state.id++;
   state.product = { ...productValues, id: state.id };
-  console.log(state.products);
   state.products.unshift(state.product);
   state.productsSorted = state.products;
   storgeProducts(state.products);
-
-  console.log(state.product, state.id);
 };
 
 const storgeProducts = function (products) {
@@ -29,14 +26,12 @@ export const getProducts = function () {
   state.products = data;
   state.productsSorted = data;
   state.id = state.products.at(0).id;
-  console.log(state.products);
 };
 
 export const sortProducts = function (option) {
   state.productsSorted = state.products.toSorted(
     (a, b) => b[option] - a[option]
   );
-  console.log(state.productsSorted);
 };
 
 export const setProductSortedOnload = function () {
@@ -51,7 +46,6 @@ export const clearAll = function () {
 };
 
 export const editProductsArr = function (id, valuesArr) {
-  console.log(id, valuesArr);
   const editedProductIndex = getIndex(state.products, id);
   state.products.at(editedProductIndex).name = valuesArr[0];
   state.products.at(editedProductIndex).model = valuesArr[1];
