@@ -2,7 +2,7 @@
   "name": "image-genrator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "default": "src/index.html",
   "scripts": {
     "start": "parcel src/index.html --no-cache --open",
     "build": "parcel build index.html --dist-dir ./dist"
