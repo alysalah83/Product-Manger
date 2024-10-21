@@ -1,0 +1,83 @@
+@media (min-width: 1900px) {
+  html {
+    font-size: 85% !important;
+  }
+}
+
+@media (max-width: 1600px) {
+  html {
+    font-size: 75% !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 60% !important;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 58% !important;
+  }
+
+  .input.input__search.input__search-active {
+    width: 65% !important;
+  }
+  .search__container {
+    width: 25rem !important;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 53% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 50% !important;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 40% !important;
+  }
+  .main {
+    width: 95vw !important;
+    margin-right: 0.8rem !important;
+    margin-left: auto !important;
+  }
+  .options__container {
+    gap: 1.2rem !important;
+    width: 60% !important;
+    padding: 2rem 1rem !important;
+    justify-content: space-around !important;
+  }
+  .input__select {
+    width: 8rem !important;
+  }
+
+  .table__head {
+    grid-template-columns: 2fr 3.5fr 5fr 3.5fr 3.5fr 5fr 3.5fr 3.5fr 3fr !important;
+  }
+
+  .table__row {
+    grid-template-columns: 2fr 3.5fr 5fr 3.5fr 3.5fr 5fr 3.5fr 3.5fr 3fr !important;
+  }
+
+  .table__ele {
+    font-size: 1.5rem !important;
+  }
+  .remove-ele__container {
+    left: 2% !important;
+  }
+}
+
+@media (max-width: 399px) {
+  html {
+    font-size: 38% !important;
+  }
+}

@@ -13,7 +13,7 @@ class Search {
   }
 
   addHandlerInputng(handler) {
-    this.#inputSearch.addEventListener('input', e => {
+    this.#inputSearch.addEventListener('input', _ => {
       const { value } = this.#inputSearch;
       handler(value);
     });

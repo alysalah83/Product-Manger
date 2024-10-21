@@ -176,11 +176,17 @@
   stroke-width: 10;
 }
 
-.label__select {
+.sort__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.span__select {
   font-size: 1.8rem !important;
   font-size: 600;
   color: #373b3e;
-  margin-right: 1.4rem;
 }
 
 .input__select {
@@ -256,7 +262,7 @@
 
 .btn__edit {
   width: 70%;
-  padding: 1rem 1.4rem;
+  padding: 0.8rem;
   background-color: #1971c2;
   display: flex;
   justify-content: center;
